@@ -16,6 +16,9 @@ def main():
     
     manager = PreprocessManager(pa_df, categorical_columns)
     
+    print(manager.features[:5])
+    print(manager.labels[:5])
+
 
 if __name__ == "__main__":
     main()

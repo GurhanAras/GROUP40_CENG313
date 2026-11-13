@@ -9,7 +9,7 @@ class PreprocessManager:
         self.feature_preprocessor = GeoClefCSVFeaturePreprocessor(categorical_columns)
         self.features = self.feature_preprocessor.fit_transform(raw_features)
         
-        raw_labels = (df.groupby("surveyId", as_index=False).apply(list))
+        raw_labels = (df.groupby("surveyId", as_index=False).agg(list))
         
         self.label_preprocessor = GeoClefCSVLabelPreprocessor()
         self.labels = self.label_preprocessor.fit_transform(raw_labels)
